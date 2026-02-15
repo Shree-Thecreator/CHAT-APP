@@ -1,31 +1,36 @@
 # 💬 Real-Time Chat App
 
-A modern, real-time chat application built with **React**, **Node.js**, **Socket.io**, and **Supabase**. This project enables users to communicate instantly through a sleek and responsive interface.
+A modern, real-time chat application built with **Next.js**, **TypeScript**, **Node.js**, **Socket.io**, and **Supabase**. This project enables users to communicate instantly through a sleek and premium interface.
 
 ---
 
 ## 🚀 Key Features
 
 - **Real-Time Messaging**: Instant message delivery using Socket.io.
-- **Modern UI**: Clean and intuitive design built with React.
-- **Supabase Integration**: Backend power for authentication and data management.
+- **Tailwind CSS v4**: Cutting-edge, lightning-fast styling with the latest Tailwind CSS.
+- **Full TypeScript**: End-to-end type safety across both frontend and backend.
+- **Premium UI**: Modern dark-mode aesthetic with glassmorphism and smooth animations.
+- **Supabase Integration**: Backend power for authentication and room management.
 - **Responsive Design**: Works seamlessly across desktops, tablets, and mobile devices.
-- **Scalable Backend**: Robust Node.js & Express server for handling concurrent connections.
+- **Environment Security**: Sensitive keys managed through secure `.env` files.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### **Frontend**
-- [React](https://reactjs.org/) (Create React App)
+- [Next.js](https://nextjs.org/) (App Router)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
 - [Socket.io-client](https://socket.io/docs/v4/client-api/)
 - [Supabase JS SDK](https://supabase.com/docs/reference/javascript/introduction)
-- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) (Vanilla CSS)
 
 ### **Backend**
 - [Node.js](https://nodejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
 - [Socket.io](https://socket.io/)
+- [dotenv](https://github.com/motdotla/dotenv)
 
 ---
 
@@ -33,15 +38,16 @@ A modern, real-time chat application built with **React**, **Node.js**, **Socket
 
 ```text
 CHAT-APP/
-├── client/          # React frontend application
+├── client/          # Next.js frontend application (TypeScript + Tailwind v4)
 │   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── contexts/    # React Context providers
-│   │   ├── pages/       # Page-level components
-│   │   └── services/    # API and Socket services
-├── server/          # Node.js Express server
-│   └── server.js    # Entry point for backend
-└── .gitignore       # Git ignore rules
+│   │   ├── app/         # Layouts, pages, and global styles
+│   │   ├── components/  # Typed UI components
+│   │   ├── contexts/    # Auth context provider
+│   │   └── services/    # Supabase service client
+├── server/          # Node.js Express server (TypeScript)
+│   ├── server.ts    # Main entry point
+│   └── dist/        # Compiled JavaScript output
+└── .env.example     # Environment variable template
 ```
 
 ---
@@ -49,8 +55,8 @@ CHAT-APP/
 ## ⚙️ Getting Started
 
 ### **Prerequisites**
-- Node.js (v16+ recommended)
-- npm or pnpm
+- Node.js (v18+ recommended)
+- [pnpm](https://pnpm.io/) (preferred) or npm
 
 ### **Installation**
 
@@ -63,13 +69,13 @@ CHAT-APP/
 2. **Setup the Backend:**
    ```bash
    cd server
-   npm install
+   pnpm install
    ```
 
 3. **Setup the Frontend:**
    ```bash
    cd ../client
-   npm install
+   pnpm install
    ```
 
 ### **Running the Application**
@@ -77,14 +83,14 @@ CHAT-APP/
 1. **Start the Server:**
    ```bash
    cd server
-   npm start
+   pnpm dev
    ```
-   *The server will run on `http://localhost:4000`*
+   *The server will run on `http://localhost:4000` (via ts-node-dev)*
 
 2. **Start the Client:**
    ```bash
    cd ../client
-   npm start
+   pnpm dev
    ```
    *The app will be available at `http://localhost:3000`*
 
@@ -92,25 +98,7 @@ CHAT-APP/
 
 ## 🔐 Environment Variables
 
-To run this project, you will need to add the following environment variables to your `.env` files.
-
-### **Frontend (.client/.env)**
-```env
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
----
-
-## 📝 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+Refer to `.env.example` in the root directory for the required variables. Create `.env.local` in `client/` and `.env` in `server/`.
 
 ---
 
